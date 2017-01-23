@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html>
+<style>
+input[type=text]:focus {
+    background-color: lightblue;
+}
+input[type=text], select {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=password], select {
+    width: 40%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=tex] {
+  width: 40%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: none;
+    border-bottom: 2px solid red;
+}
+input[type=int], select {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+</style>
+<body>
+
+<h1 style="color:#45a049; font-size: 40px;">Regstration</h1>
+<h2 style="color:#45a099; font-size: 30px;">Sign up for easy access!</h2>
+<script>
+function validateForm() {
+    var x = document.forms["myForm"]["fname"].value;
+    if (x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+}
+
+</script>
+<div>
+  <form action="register.php" onsubmit="return validateForm()" method="post">
+    <label for="fname">Full Name</label>
+    <input type="text" id="fname" placeholder="full name" name="firstname">
+     <br>
+     <label for="uname">User  Name</label>
+    <input type="tex" id="fname" placeholder="create username" name="username">
+
+
+      <br>
+    <label for="password"> Password</label>
+    <input type="password" id="pword" placeholder="password" name="password">
+    <br>
+    <label for="password">Password</label>
+    <input type="password" id="cpword" placeholder="confirm password" name="confirm password">
+    <br>
+     <label>Birthday</label>
+                  <label class="month">
+                  <select class="select-style" name="BirthMonth">
+                  <option value="">Month</option>
+                  <option  value="01">January</option>
+                  <option value="02">February</option>
+                  <option value="03" >March</option>
+                  <option value="04">April</option>
+                  <option value="05">May</option>
+                  <option value="06">June</option>
+                  <option value="07">July</option>
+                  <option value="08">August</option>
+                  <option value="09">September</option>
+                  <option value="10">October</option>
+                  <option value="11">November</option>
+                  <option value="12" >December</option>
+                  </label>
+                  </select>
+                  <br>
+                  <label>Day<input type="int" id="bdate" placeholder="Day" name="BirthDay"></label>
+                  <label>Year<input type="int" id="byear" placeholder="year" name="BirtYear" required=""></label>
+                  <br>
+                  <label for="address">Address</label>
+                  <input type="text"  placeholder="present address" name="address">
+                  <br>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>
